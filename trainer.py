@@ -43,8 +43,12 @@ class Trainer:
 
             self.optimizer.zero_grad()
 
-            output = self.model(frame0, frame2)
-            loss = self.loss(output, frame1, [frame0, frame2])
+            # output = self.model(frame0, frame2)
+            # loss = self.loss(output, frame1, [frame0, frame2])
+
+            # Switch frame2 and frame 1 for prediction
+            output = self.model(frame0, frame1)
+            loss = self.loss(output, frame2, [frame0, frame1])
             loss.backward()
             self.optimizer.step()
 

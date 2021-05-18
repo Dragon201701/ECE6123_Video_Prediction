@@ -1,0 +1,2 @@
+/opt/slurm/data/slurmd/job6895640/slurm_script: line 14: cd: /home/yl7897/AdaCof-pytorch: No such file or directory
+slurmstepd: error: *** JOB 6895640 ON gr017-ib0 CANCELLED AT 2021-05-17T11:44:25 ***

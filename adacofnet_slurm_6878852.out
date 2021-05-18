@@ -1,0 +1,33 @@
+/opt/slurm/data/slurmd/job6878852/slurm_script: line 14: cd: /home/yl7897/AdaCof-pytorch: No such file or directory
+1.000 * Charb
+0.010 * g_Spatial
+0.005 * g_Occlusion
+Traceback (most recent call last):
+  File "train.py", line 82, in <module>
+    main()
+  File "train.py", line 65, in main
+    my_trainer = Trainer(args, train_loader, TestDB, model, loss, start_epoch)
+  File "/home/yl7897/AdaCoF-pytorch/trainer.py", line 34, in __init__
+    self.test_loader.Test(self.model, self.result_dir, self.current_epoch, self.logfile, str(self.current_epoch).zfill(3) + '.png')
+  File "/home/yl7897/AdaCoF-pytorch/TestModule.py", line 51, in Test
+    frame_out = model(self.input0_list[idx], self.input1_list[idx])
+  File "/home/yl7897/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/yl7897/AdaCoF-pytorch/models/__init__.py", line 12, in forward
+    return self.model(frame0, frame1)
+  File "/home/yl7897/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/yl7897/AdaCoF-pytorch/models/adacofnet.py", line 193, in forward
+    tensorAdaCoF1 = self.moduleAdaCoF(self.modulePad(frame0), Weight1, Alpha1, Beta1, self.dilation)
+  File "/home/yl7897/AdaCoF-pytorch/cupy_module/adacof.py", line 343, in forward
+    cupy_launch('kernel_AdaCoF_updateOutput', cupy_kernel('kernel_AdaCoF_updateOutput', intFilterSize, dilation, {
+  File "cupy/util.pyx", line 55, in cupy.util.memoize.decorator.ret
+  File "/home/yl7897/AdaCoF-pytorch/cupy_module/adacof.py", line 306, in cupy_launch
+    return cupy.cuda.compile_with_cache(strKernel).get_function(strFunction)
+  File "/home/yl7897/.local/lib/python3.8/site-packages/cupy/cuda/compiler.py", line 162, in compile_with_cache
+    mod.load(cubin)
+  File "cupy/cuda/function.pyx", line 184, in cupy.cuda.function.Module.load
+  File "cupy/cuda/function.pyx", line 186, in cupy.cuda.function.Module.load
+  File "cupy/cuda/driver.pyx", line 186, in cupy.cuda.driver.moduleLoadData
+  File "cupy/cuda/driver.pyx", line 82, in cupy.cuda.driver.check_status
+cupy.cuda.driver.CUDADriverError: CUDA_ERROR_INVALID_SOURCE: device kernel image is invalid
