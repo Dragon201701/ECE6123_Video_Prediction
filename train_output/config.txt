@@ -1,0 +1,44 @@
+2021-05-17-12:22:37
+
+model: adacofnet
+gpu_id: 0
+train: /scratch/yl7897/vimeo_triplet
+out_dir: /scratch/yl7897/train_output/gpu4
+load: None
+test_input: ./test_input/middlebury_others/input
+gt: ./test_input/middlebury_others/gt
+epochs: 50
+batch_size: 4
+loss: 1*Charb+0.01*g_Spatial+0.005*g_Occlusion
+patch_size: 256
+lr: 0.001
+lr_decay: 20
+decay_type: step
+gamma: 0.5
+optimizer: ADAMax
+weight_decay: 0
+kernel_size: 5
+dilation: 1
+
+2021-05-17-18:17:29
+
+model: adacofnet
+gpu_id: 0
+train: /scratch/yl7897/vimeo_triplet
+out_dir: /scratch/yl7897/train_output/gpu4
+load: /scratch/yl7897/train_output/gpu2/checkpoint/model_epoch003.pth
+test_input: ./test_input/middlebury_others/input
+gt: ./test_input/middlebury_others/gt
+epochs: 50
+batch_size: 4
+loss: 1*Charb+0.01*g_Spatial+0.005*g_Occlusion
+patch_size: 256
+lr: 0.001
+lr_decay: 20
+decay_type: step
+gamma: 0.5
+optimizer: ADAMax
+weight_decay: 0
+kernel_size: 5
+dilation: 1
+
