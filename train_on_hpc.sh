@@ -13,4 +13,4 @@
 
 cd /home/yl7897/AdaCoF-pytorch/
 module load python/intel/3.8.6 cuda/10.2.89
-python train.py --train /scratch/yl7897/vimeo_triplet --out_dir /scratch/yl7897/train_output/gpu1 --load /scratch/yl7897/train_output/gpu1/checkpoint/model_epoch016.pth
+python train.py --train /scratch/yl7897/vimeo_triplet --out_dir /scratch/yl7897/train_output/gpu1 --load /scratch/yl7897/train_output/gpu1/checkpoint/model_epoch019.pth
